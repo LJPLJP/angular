@@ -1,0 +1,104 @@
+<!--<div id="donghua" ng-hide="bol1">
+	<img src="img/as.jpg"/>
+	<p></p>
+</div>-->
+<div class="wrap1" ng-controller="productCtrl">
+	<nav>
+		<dl class="left">
+			<dt>
+				<img src="img/home.png"/>
+			</dt>
+			<dd>
+				主页
+			</dd>
+		</dl>
+		<a href="#/search" class="center">
+			<img src="img/index_search.png" class="img1"/>
+			<input type="text" name="" id="" value="" placeholder="搜索药品/器械/中药饮片"/>
+		</a>
+		<dl class="right">
+			<dt>
+				<img src="img/xiaoxi.png"/>
+			</dt>
+			<dd>
+				消息
+			</dd>
+		</dl>
+	</nav>
+	<div id="main1">
+		<div class="swiper-container lunbo1">
+			<div class="swiper-wrapper">
+			    <div class="swiper-slide"><img src="img/banner1.jpg"/></div>
+			    <div class="swiper-slide"><img src="img/banner2.jpg"/></div>
+			    <div class="swiper-slide"><img src="img/banner3.jpg"/></div>
+			    <div class="swiper-slide"><img src="img/banner4.jpg"/></div>
+			    <div class="swiper-slide"><img src="img/banner5.jpg"/></div>
+			    <div class="swiper-slide"><img src="img/banner6.jpg"/></div>
+			    <div class="swiper-slide"><img src="img/banner7.jpg"/></div>
+			    <div class="swiper-slide"><img src="img/banner8.jpg"/></div>
+			</div>
+			<div class="swiper-pagination xiao"></div>
+		</div>
+	</div>
+	<div id="main2">
+		<p>
+			<dl>
+				<dt><img src="img/nav1.png"/></dt>
+				<dd>轻松找药</dd>
+			</dl>
+			<a href="#/hot">
+			<dl>
+				<dt><img src="img/nav2.png"/></dt>
+				<dd>领券中心</dd>
+			</dl>
+			<dl>
+			</a>
+				<dt><img src="img/nav3.png"/></dt>
+				<dd>签到有礼</dd>
+			</dl>
+			<dl>
+				<dt><img src="img/nav4.png"/></dt>
+				<dd>私人定制</dd>
+			</dl>
+		</p>
+		<p>
+			<dl>
+				<dt><img src="img/nav5.png"/></dt>
+				<dd>男士</dd>
+			</dl>
+			<dl>
+				<dt><img src="img/nav6.png"/></dt>
+				<dd>女士</dd>
+			</dl>
+			<dl>
+				<dt><img src="img/nav7.png"/></dt>
+				<dd>老人</dd>
+			</dl>
+			<dl>
+				<dt><img src="img/nav8.png"/></dt>
+				<dd>儿童</dd>
+			</dl>
+		</p>
+	</div>
+	<div id="hot">
+		<span>超值秒杀</span>
+		<span>距结束：{{time}}</span>
+	</div>
+	<div id="main3">
+		<div class="swiper-container lunbo2">
+			<div class="swiper-wrapper">
+				<dl class="swiper-slide" ng-repeat="shop1 in products">
+					<dt><img ng-src={{shop1.Pic180}}></dt>
+					<dd>￥{{shop1.SeckillPrice}}</dd>
+					<dd>￥{{shop1.Price}}</dd>
+					<span>{{shop1.Discount}}折</span>
+				</dl>
+			</div>
+		</div>
+	</div>
+	<div id="main4">
+		<span class="img1"><img src="../img/ds.jpg" /></span>
+		<span class="img2"><img src="../img/dd.png" /></span>
+		<span class="img3"><img src="../img/dsa.jpg" /></span>
+	</div>
+</div>
