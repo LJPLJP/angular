@@ -1,0 +1,61 @@
+<!doctype html>
+<html ng-app="shop">
+<head>
+	<meta charset="UTF-8"/>
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	<title>项目</title>
+	<link rel="stylesheet" type="text/css" href="css/swiper-3.4.0.min.css"/>
+	<link rel="stylesheet" type="text/css" href="css/index.css"/>
+	<link rel="stylesheet" type="text/css" href="css/mine.css"/>
+</head>
+<body  ng-controller="productCtrl">
+	<!--ng-view  路由指令-->
+	<div class="wraps" ng-view>	
+	</div>
+	<div id="footer">
+		<a ng-repeat="nav in navArr" ng-href={{nav.url}} ng-click="changeClassName(nav)"  class="{{nav.clas}}">
+			<div>
+				
+			</div>
+			<p>
+				{{nav.text}}
+			</p>
+		</a>
+		<img src="img/consult.jpg" id="consult" alt="" />
+	</div>
+	<div class="index_mask">
+		<img src="img/umbrella.jpg" class="index_umbrella"/>
+		<div class="index_server">
+			<div>
+				<img src="img/Aftermarket.jpg"/>
+				<p>售后服务</p>
+			</div>
+			<div>
+				<img src="img/phone.jpg"/>
+				<p>电话咨询</p>
+			</div>
+			<div>
+				<img src="img/consult.jpg"/>
+				<p>售后服务</p>
+			</div>
+
+		</div>
+		<img src="img/x.jpg" id="index_X"/>
+	</div>
+	<div id="index_loading">
+		<img src="img/index_loading.jpg"/>
+		<p id="index_whiteMask"></p>
+	</div>
+</body>
+<script src="js/page/swiper-3.4.0.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/page/angular.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/page/angular-resource.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/page/angular-route.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/page/jquery-3.1.1.min.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+	var myshop = angular.module('shop',['ngRoute']);
+		//路由和购物车模块
+</script>
+<script src="js/index.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/shopCar.js" type="text/javascript" charset="utf-8"></script>
+</html>
