@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" type="text/css" href="../css/shopCar.css"/>
+		
+		<script src=" ../js/page/angular.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/page/angular-route.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/shopCar.js"></script>
+	</head>
+	<body ng-app='myapp' ng-controller='shopCar'>
+		<!--<div ng-view></div>-->
+		<!--//头部-->
+		<div class="shopCar-header">
+			<p><span>购物车</span><span>编辑</span></p>
+		</div>
+		<!--//主要 两部分1、康爱多 2、购物加减-->
+		<div class="shopCar-mainall">
+			<!--1、康爱多-->
+			<div class="shopCar-top">
+				<p ng-click ="obj(hi)"><span><img src="img/shopCar7.png"/></span><span>康爱多</span></p>
+			</div>
+			<!--2、购物加减 li分三个div 左中右-->
+			<div class="shopCar-main">
+				<ul>
+					<li ng-repeat='obj in arr'>
+						<div class="scm-left">
+							<p  ng-click ="obj(hi)"><img src="img/shopCar7.png" /></p>
+							
+						</div>
+						<div class="scm-center">
+							<img ng-src='{{obj.Pic}}'/>
+						</div>
+						<div class="scm-right">
+							<p>{{obj.Title}}</p>
+							<p class="shopCar-price">￥：{{obj.Price}}</p>
+							<p>
+								<span><img ng-click='jian(obj)' src="img/shopCar-jian.jpg"/></span>
+								<span>{{obj.Qty}}</span>
+								<span><img ng-click='jia(obj)' src="img/shopCar-jia.jpg"/></span>
+							</p>
+						</div>
+					</li>
+				</ul> 
+			</div>
+			<div class="jiesuan">
+					<div class="jiesuan-left"><p><img src="img/v.png"/></p></div>
+					<div class="jiesuan-center"><p>总计：￥{{sum}}</span></p></div>
+					<div class="jiesuan-right"><p>立即结算</p></div>
+			</div>
+		</div>
+		
+	</body>
+</html>

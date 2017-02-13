@@ -1,0 +1,139 @@
+@charset "utf-8";
+/*头部*/
+.shopCar-header{
+	background: #f8f8f8;
+	border-bottom: 2px solid #cbcbcb;
+}
+.shopCar-header p{
+	/*text-align: center;*/
+	padding: 1rem 0 1rem 0;
+}
+.shopCar-header span:nth-child(1){
+	display: inline-block;
+	text-align: center;
+	width: 90%;	
+}
+.shopCar-header span:nth-child(2){
+	display: inline-block;
+	text-align: center;
+	width: 10%;
+}
+/*主体*/
+.shopCar-mainall{
+	width: 100%;
+}
+/*//主体1 康爱多*/
+.shopCar-top{
+	width: 85%;
+	margin-left: 5%;
+	border-bottom: 1px solid #ccc;
+}
+.shopCar-top p{
+	overflow: hidden;
+}
+.shopCar-top>p span:nth-child(1){
+	display: inline-block;
+	width: 1.5rem;
+	height: 1.5rem;
+	border: 2px solid #CBCBCB;
+	border-radius: 50%;
+	float: left;
+}
+.shopCar-top>p span:nth-child(2){
+	float: left;
+	padding-top:.3rem;
+	margin-left: 0.5rem;
+}
+.shopCar-top span img{
+	width: 100%;
+}
+.shopCar-top p{
+	margin:1rem;
+}
+
+/*2 购物加减*/
+.shopCar-main{
+	width: 85%;
+	margin-left: 5%;
+}
+.shopCar-main li{
+	width: 100%;
+	overflow: hidden;
+	margin-top: 2rem;
+	padding-bottom: 1.5rem;
+	border-bottom: 1px solid #ccc;
+}
+.scm-left{
+	float: left;
+	width: 10%;
+	padding:3rem 0.5rem;
+	/*display: none;*/
+}
+.scm-left p{
+	width:1.5rem;
+	height: 1.5rem;
+	border: 2px solid #CBCBCB;
+	border-radius:50%;
+}
+.scm-left p img{
+	width: 100%;
+}
+.scm-center{
+	float: left;
+	width:35%;
+}
+.scm-center img{
+	width: 100%;
+	border: 1px solid #ededed;
+}
+.scm-right{
+	width: 40%;
+	float: right;
+	text-align: center;
+	padding-top: 0.5rem;
+}
+.scm-right p:nth-child(1){
+	font-size: 1.6rem;
+}
+/*.scm-right span{
+	display: inline-block;
+	width: 30%;
+}*/
+.shopCar-price{
+	color:#ea4529;
+}
+.jiesuan{
+	border-top:1px solid #CCCCCC ;
+	border-bottom:1px solid #CCCCCC ;
+	/*position: fixed;*/
+	margin-bottom: 12.5rem;
+	overflow: hidden;
+}
+.jiesuan div{
+	width: 30%;
+}
+.jiesuan-left{
+	float: left;
+	margin-left: 5%;
+}
+.jiesuan-left p {
+	width:1.5rem;
+	height: 1.5rem;
+	border: 2px solid #CBCBCB;
+	border-radius:50%;
+	margin-top: 0.5rem;
+	margin-left: 0.4rem;
+}
+.jiesuan-left img{
+	width: 100%;
+}
+.jiesuan-center{
+	float:left;
+	padding-top: 0.7rem;
+}
+.jiesuan-right{
+	float:right;
+	padding: 1rem 0.5rem;
+	text-align: center;
+	background-color: #ea4529;
+}
