@@ -1,7 +1,4 @@
-<!--<div id="donghua" ng-hide="bol1">
-	<img src="img/as.jpg"/>
-	<p></p>
-</div>-->
+
 <div class="wrap1" ng-controller="productCtrl">
 	<nav>
 		<dl class="left">
@@ -80,7 +77,7 @@
 			</dl>
 		</p>
 	</div>
-	<div id="hot">
+	<div id="hot1">
 		<span>超值秒杀</span>
 		<span>距结束：{{time}}</span>
 	</div>
@@ -100,5 +97,35 @@
 		<span class="img1"><img src="../img/ds.jpg" /></span>
 		<span class="img2"><img src="../img/dd.png" /></span>
 		<span class="img3"><img src="../img/dsa.jpg" /></span>
+	</div>
+	<div id="hot2">
+		<span>热门科室</span>
+	</div>
+	<div id="main5">
+		<p class="p1">
+			<img src="../img/CgAgEVdzfPSAbMAUAACAKmuKgZU380.jpg"/>
+			<img src="../img/CgAgEFdzfQCAYj5IAACJqIT5qQg966.jpg"/>
+		</p>
+		<p class="p2">
+			<img src="../img/CgAgEFdVMYOAPrl8AAB9aGyc-UE711.png"/>
+			<img src="../img/CgAgEVdVMgCAE-D8AAB7Zib3_ew290.png"/>
+		</p>
+		<p class="p3">
+			<img src="../img/CgAgEFdVMmSAbMaOAACoXqkU4Dg678.png"/>
+			<img src="../img/CgAgEVdVM0-AebuAAAC-VYu1WXA900.png"/>
+			<img src="../img/CgAgEVdVM6eARE-LAAC-RLAcTLg852.png"/>
+			<img src="../img/CgAgEFdVM_yAXWh7AAC7NHRbPCg390.png"/>
+		</p>
+	</div>
+	<div id="hot3">
+		<p>猜你喜欢</p>
+	</div>
+	<div id="main6">
+		<dl ng-repeat="obj in product1">
+			<dt><img ng-src={{obj.Pic180}}></dt>
+			<dd>{{obj.WareName}}</dd>
+			<span>￥{{obj.SalePrice}}</span>
+			<span>￥{{obj.MarketPrice}}</span>
+		</dl>
 	</div>
 </div>

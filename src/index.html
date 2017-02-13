@@ -4,25 +4,27 @@
 	<meta charset="UTF-8"/>
 	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
 	<title>项目</title>
-	<link rel="stylesheet" type="text/css" href="css/swiper-3.4.0.min.css"/>
-	<link rel="stylesheet" type="text/css" href="css/index.css"/>
-	<link rel="stylesheet" type="text/css" href="css/mine.css"/>
+	<link rel="stylesheet" href="css/index.css" />
 </head>
-<body  ng-controller="productCtrl">
+<body>
+	<div id="donghua" ng-hide="bol2" ng-controller="donghua">
+		<img src="img/as.jpg"/>
+		<p></p>
+	</div>
 	<!--ng-view  路由指令-->
 	<div class="wraps" ng-view>	
 	</div>
-	<div id="footer">
-		<a ng-repeat="nav in navArr" ng-href={{nav.url}} ng-click="changeClassName(nav)"  class="{{nav.clas}}">
-			<div>
-				
+	<div id="footer" ng-show="bol1"  ng-controller="productCtrl">
+		<a ng-repeat="nav in navArr" ng-href={{nav.url}} ng-click="changeClassName(nav)" class="{{nav.clas}}">
+			<div>				
 			</div>
 			<p>
 				{{nav.text}}
 			</p>
 		</a>
-		<img src="img/consult.jpg" id="consult" alt="" />
+		<img src="img/consult.jpg" id="consult" ng-click="changeClassName(nav)" />
 	</div>
+	<div id="foot"></div>
 	<div class="index_mask">
 		<img src="img/umbrella.jpg" class="index_umbrella"/>
 		<div class="index_server">
@@ -42,20 +44,6 @@
 		</div>
 		<img src="img/x.jpg" id="index_X"/>
 	</div>
-	<div id="index_loading">
-		<img src="img/index_loading.jpg"/>
-		<p id="index_whiteMask"></p>
-	</div>
 </body>
-<script src="js/page/swiper-3.4.0.min.js" type="text/javascript" charset="utf-8"></script>
-<script src="js/page/angular.js" type="text/javascript" charset="utf-8"></script>
-<script src="js/page/angular-resource.js" type="text/javascript" charset="utf-8"></script>
-<script src="js/page/angular-route.js" type="text/javascript" charset="utf-8"></script>
-<script src="js/page/jquery-3.1.1.min.js" type="text/javascript" charset="utf-8"></script>
-<script type="text/javascript">
-	var myshop = angular.module('shop',['ngRoute']);
-		//路由和购物车模块
-</script>
-<script src="js/index.js" type="text/javascript" charset="utf-8"></script>
-<script src="js/shopCar.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/single.js" type="text/javascript" charset="utf-8"></script>
 </html>

@@ -1,45 +1,30 @@
-$(function(){
-	$("#consult").click(function(){
-		$(".index_mask").toggle();
-		$(".index_server").css({animation:"show 1.2s"})
-	})
-	$("#index_X").click(function(){
-		$(".index_server").css({animation:"hide 0.7s"})
-		setTimeout(function(){
-			$(".index_mask").toggle();
-		},500)
-	})
-	var index_whiteMask_width = 45;
-	var timer = setInterval(function(){
-		index_whiteMask_width = index_whiteMask_width - 0.5;
-		$("#index_whiteMask").css({
-			width:index_whiteMask_width + '%'
-		});
-		if(index_whiteMask_width <= 0){
-			clearInterval(timer);
-			$("#index_loading").css({
-				animation:'loadindHide 4s'
-			});
-			setTimeout(function(){
-				$("#index_loading").hide()
-			},2000)
-		};
-	},30)
-})
-angular.module('shop')
+
+var index_mask = document.getElementsByClassName("index_mask")[0];
+var index_server = document.getElementsByClassName("index_server")[0];
+consult.onclick = function(){
+	index_mask.style.display = "block";
+	index_server.style.animation = "show 0.7s";
+}
+
+index_X.onclick = function(){
+	index_mask.style.display = "none";
+	index_server.style.animation = "hide 1.2s";
+}
+var myshop = angular.module('shop',['ngRoute'])
+		//路由和购物车模块
 .constant('dataUrl','http://localhost:4321/')
 .controller('productCtrl',['$scope','$http','dataUrl','$timeout','$interval',
 function($scope,$http,dataUrl,$timeout,$interval){//定义一个控制器
 	$scope.navArr = [
 			{
 				url:'#/home',
-				text:'主页',
+				text:'主 页',
 				index:'1',
 				clas:'indexBtn1-1 index_btn'
 			},
 			{
 				url:'#/classes',
-				text:'分类',
+				text:'分 类',
 				index:'2',
 				clas:'indexBtn2'
 			}
@@ -68,10 +53,14 @@ function($scope,$http,dataUrl,$timeout,$interval){//定义一个控制器
 	$http.get(dataUrl+"seckill").then(function(datas){
 		$scope.products = datas.data.SeckillWares;//第一个data是形参
 	});
+	//猜你喜欢数据
+	$http.get(dataUrl+"like").then(function(datas){
+		$scope.product1 = datas.data.Data;//第一个data是形参
+	});
 	$scope.bol1 = false;
 	$timeout(function(){
 		$scope.bol1=!$scope.bol1;
-	},5000);
+	},10);
     //轮播1
 	$scope.swiper = new Swiper('#main1 .swiper-container', {
 	    pagination: '.swiper-pagination',//小圆点

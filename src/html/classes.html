@@ -1,0 +1,21 @@
+<div id="classes_wrap" ng-controller="classes">
+	<div class="classes_header">
+		全部分类
+	</div>
+	<div class="classes_main">
+		<ul class="classes_nav">
+			<li ng-repeat="navname in classes_navArr" ng-click="classes_navClick(navname)">
+				{{navname}}
+			</li>
+		</ul>
+		<ol class="classes_content">
+			<li ng-repeat="data in classes_datas">
+				<p  class="classes_content_title">{{data.FirstChannel.WebChannelName}}</p>
+				<a href="" ng-repeat="obj in data.SecChannel">
+					<img src={{obj.WebChannelImg}} alt="" />
+					<span>{{obj.WebChannelName}}</span>
+				</a>
+			</li>
+		</ol>
+	</div>
+</div>
