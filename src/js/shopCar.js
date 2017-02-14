@@ -1,10 +1,8 @@
-angular.module('myapp',[]).controller("shopCar",function($scope,$http){
+angular.module('shop').controller("cart",['$scope','$http',function($scope,$http){
 	$scope.arr = [];
 	$scope.sum = 0;
 	$http.get("http://169.254.241.177:4321/buyCar").then(function(data){
-		console.log(data);
 		$scope.arr = data.data.Data.Packages[0].Items;
-		console.log($scope.arr);
 	})
 	$scope.jian = function(s){
 		s.Qty--;
@@ -23,7 +21,8 @@ angular.module('myapp',[]).controller("shopCar",function($scope,$http){
 		for(var i= 0; i<$scope.arr.length;i++){
 			$scope.sum = $scope.sum + $scope.arr[i].Qty*$scope.arr[i].Price;
 		}
-		console.log($scope.sum)
 	}
-	
-})
+	$scope.toggle = function(){
+		$scope.hid = !$scope.hid;
+	}
+}])

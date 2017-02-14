@@ -1,0 +1,49 @@
+<!doctype html>
+<html ng-app="shop">
+<head>
+	<meta charset="UTF-8"/>
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	<title>项目</title>
+	<link rel="stylesheet" href="css/index.css" />
+</head>
+<body>
+	<div id="donghua" ng-hide="bol2" ng-controller="donghua">
+		<img src="img/as.jpg"/>
+		<p></p>
+	</div>
+	<!--ng-view  路由指令-->
+	<div class="wraps" ng-view>	
+	</div>
+	<div id="footer" ng-show="bol1"  ng-controller="productCtrl">
+		<a ng-repeat="nav in navArr" ng-href={{nav.url}} ng-click="changeClassName(nav)" class="{{nav.clas}}">
+			<div>				
+			</div>
+			<p>
+				{{nav.text}}
+			</p>
+		</a>
+		<img src="img/consult.jpg" id="consult" ng-click="changeClassName(nav)" />
+	</div>
+	<div id="foot"></div>
+	<div class="index_mask">
+		<img src="img/umbrella.jpg" class="index_umbrella"/>
+		<div class="index_server">
+			<div>
+				<img src="img/Aftermarket.jpg"/>
+				<p>售后服务</p>
+			</div>
+			<div>
+				<img src="img/phone.jpg"/>
+				<p>电话咨询</p>
+			</div>
+			<div>
+				<img src="img/consult.jpg"/>
+				<p>售后服务</p>
+			</div>
+
+		</div>
+		<img src="img/x.jpg" id="index_X"/>
+	</div>
+</body>
+<script src="js/single.js" type="text/javascript" charset="utf-8"></script>
+</html>

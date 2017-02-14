@@ -2,7 +2,8 @@ var gulp=require("gulp"),
 	webserver=require("gulp-webserver"),
 	livereload=require("gulp-livereload"),
 	sass = require('gulp-ruby-sass'),
-	uglify=require("gulp-uglify"),
+	concat = require('gulp-concat'),   //合并文件
+	uglify=require("gulp-uglify"),//js压缩
 	imagemin=require("gulp-imagemin");
 
 
@@ -24,6 +25,7 @@ gulp.task("html",function(){
 // sass任务：
 gulp.task('sass',function(){
 	return sass('src/css/**/*.scss',{style:'compact'})//简洁格式的css
+	.pipe(concat('index.css'))      //合并css文件到"index"
 	.on('error',function(err){
 		console.log('编译sass出错%s',err.message);
 	})//指明文件路径  /**/监听目录下所有的.html文件
@@ -32,8 +34,8 @@ gulp.task('sass',function(){
 
 // script压缩任务：
 gulp.task("myjs",function(){
-	return gulp.src("src/js/**/*.js")
-		.pipe(uglify({preserveComment:"some"})) //压缩并保留注释
+	return gulp.src("src/out/**/*.js")
+//		.pipe(uglify({preserveComment:"some"})) //压缩并保留注释
 		.pipe(gulp.dest("dist/js"))
 })
 //压缩图片
